@@ -1,0 +1,810 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* ================= LIGHT THEME ================= */
+
+:root{
+
+    --bg1:#89f7fe;
+    --bg2:#66a6ff;
+    --bg3:#c9b6ff;
+
+    --card:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.55),
+        rgba(255,255,255,.25)
+    );
+
+    --border:rgba(255,255,255,.65);
+
+    --text:#1e293b;
+
+    --box:rgba(255,255,255,.45);
+
+    --input:rgba(255,255,255,.92);
+
+    --inputText:#1e293b;
+
+    --button:#ff7b72;
+
+    --shadow:rgba(30,41,59,.25);
+}
+
+
+
+/* ================= DARK THEME ================= */
+
+body.dark{
+
+    --bg1:#020617;
+    --bg2:#111827;
+    --bg3:#312e81;
+
+    --card:
+    linear-gradient(
+        135deg,
+        rgba(15,23,42,.92),
+        rgba(30,41,59,.75)
+    );
+
+    --border:rgba(255,255,255,.15);
+
+    --text:#f8fafc;
+
+    --box:rgba(255,255,255,.12);
+
+    --input:#334155;
+
+    --inputText:#fff;
+
+    --button:#38bdf8;
+
+    --shadow:rgba(0,0,0,.7);
+}
+
+
+
+
+/* ================= BODY ================= */
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--bg1),
+        var(--bg2),
+        var(--bg3)
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s infinite alternate;
+
+    transition:.5s;
+}
+
+
+@keyframes bgMove{
+
+from{
+    background-position:left top;
+}
+
+to{
+    background-position:right bottom;
+}
+
+}
+
+
+
+
+/* ================= CARD ================= */
+
+
+.weather-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+.weather-card{
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:35px;
+
+    background:var(--card);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:35px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+    0 30px 80px var(--shadow);
+
+    animation:show .8s ease;
+
+}
+
+
+
+
+
+/* ================= HEADER ================= */
+
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:var(--text);
+
+    margin-bottom:30px;
+}
+
+
+
+.header h1{
+
+    font-size:2.3rem;
+
+}
+
+
+
+.header p{
+
+    opacity:.8;
+
+}
+
+
+
+#themeToggle{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:var(--box);
+
+    color:var(--text);
+
+    font-size:20px;
+
+}
+
+
+
+/* ================= SEARCH ================= */
+
+
+.search-section{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+
+.search-section input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:var(--input);
+
+    color:var(--inputText);
+
+    font-size:16px;
+
+}
+
+
+
+.search-section input::placeholder{
+
+    color:#64748b;
+
+}
+
+
+body.dark .search-section input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+
+
+.search-section button{
+
+    padding:15px 22px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff7b72,
+        #ff9a76
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 25px rgba(255,123,114,.35);
+
+}
+
+
+body.dark .search-section button{
+
+    background:#38bdf8;
+
+}
+
+
+
+.search-section button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+
+/* ================= UNIT ================= */
+
+
+.unit-toggle{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+
+
+.unit-toggle button{
+
+    padding:8px 22px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+}
+
+
+
+.unit-toggle .active{
+
+    background:var(--button);
+
+    color:white;
+
+}
+
+
+
+/* ================= CURRENT WEATHER ================= */
+
+
+.current-weather{
+
+    text-align:center;
+
+    color:var(--text);
+
+}
+
+.current-weather img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:contain;
+
+    filter:drop-shadow(
+        0 10px 15px rgba(0,0,0,.25)
+    );
+
+}
+
+
+.current-weather h1{
+
+    font-size:4.5rem;
+
+}
+
+
+
+.current-weather h3{
+
+    font-size:1.5rem;
+
+}
+
+
+
+
+
+/* ================= DETAILS ================= */
+
+
+.details{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+
+
+.detail-box{
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.55),
+        rgba(255,255,255,.25)
+    );
+
+    padding:22px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    color:var(--text);
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+
+}
+
+
+
+.detail-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.detail-box i{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+/* ================= FORECAST ================= */
+
+
+.forecast-section{
+
+    margin-top:40px;
+
+    color:var(--text);
+
+}
+
+
+
+#forecast{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:15px;
+
+}
+
+
+
+.forecast-card{
+
+    background:var(--box);
+
+    padding:18px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+
+
+.forecast-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.forecast-card img{
+
+    width:65px;
+
+}
+
+
+
+
+
+/* ================= HISTORY ================= */
+
+
+.history{
+
+    margin-top:35px;
+
+    color:var(--text);
+
+}
+
+
+
+#historyList{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.history-item{
+
+    background:var(--box);
+
+    color:var(--text);
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:1px solid var(--border);
+
+}
+
+.history-item::before{
+
+    content:"🔍 ";
+
+}
+
+.history-item:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+/* ================= DARK FIX ================= */
+
+
+body.dark .detail-box,
+body.dark .forecast-card{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+}
+
+
+
+body.dark .history-item{
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+}
+
+
+
+body.dark .history-item:hover{
+
+    background:rgba(255,255,255,.25);
+
+}
+
+
+
+
+/* ================= LOADING ================= */
+
+
+#loading{
+
+    display:none;
+
+    text-align:center;
+
+    color:var(--text);
+
+    margin-top:20px;
+
+}
+
+
+
+
+/* ================= ANIMATION ================= */
+
+
+@keyframes show{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:800px){
+
+
+.details{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+#forecast{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+.weather-card{
+
+    padding:20px;
+
+}
+
+
+
+.header h1{
+
+    font-size:1.6rem;
+
+}
+
+
+
+.search-section{
+
+    flex-direction:column;
+
+}
+
+
+
+.details{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+#forecast{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.current-weather h1{
+
+    font-size:3rem;
+
+}
+
+
+}
+
+button:disabled{
+
+    opacity:0.6;
+
+    cursor:not-allowed;
+
+    transform:none !important;
+
+}
+
+/* ================= ERROR MESSAGE ================= */
+
+#errorMessage{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#991b1b;
+
+    background:rgba(254,226,226,.85);
+
+    border:1px solid rgba(239,68,68,.35);
+
+    animation:errorSlide .3s ease;
+
+}
+
+
+#errorMessage.show{
+
+    display:block;
+
+}
+
+
+#errorMessage i{
+
+    margin-right:8px;
+
+}
+
+
+body.dark #errorMessage{
+
+    color:#fecaca;
+
+    background:rgba(127,29,29,.45);
+
+    border:1px solid rgba(248,113,113,.35);
+
+}
+
+
+@keyframes errorSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

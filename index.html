@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Dashboard Pro</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="weather-container">
+
+
+    <div class="weather-card">
+
+
+
+        <!-- Header -->
+
+
+        <header class="header">
+
+
+            <div>
+
+
+                <h1>
+
+                    <i class="fa-solid fa-cloud-sun"></i>
+
+                    WeatherPro
+
+                </h1>
+
+
+                <p>
+                    Real-time weather information
+                </p>
+
+
+            </div>
+
+
+
+            <button id="themeToggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+        </header>
+
+
+
+
+
+
+        <!-- Search -->
+
+
+        <section class="search-section">
+
+
+            <input 
+            type="text"
+            id="cityInput"
+            placeholder="Search city..."
+            >
+
+
+
+            <button id="searchBtn">
+
+                <i class="fa-solid fa-search"></i>
+
+                Search
+
+            </button>
+
+
+
+            <button id="locationBtn">
+
+                <i class="fa-solid fa-location-crosshairs"></i>
+
+            </button>
+
+
+
+        </section>
+
+        <div id="errorMessage"></div>
+
+        <!-- Unit Toggle -->
+
+
+        <div class="unit-toggle">
+
+
+            <button id="celsiusBtn" class="active">
+
+                °C
+
+            </button>
+
+
+            <button id="fahrenheitBtn">
+
+                °F
+
+            </button>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- Current Weather -->
+
+
+        <section class="current-weather">
+
+
+            <h2 id="cityName">
+
+                City Name
+
+            </h2>
+
+
+
+            <p id="date">
+
+                Date
+
+            </p>
+
+
+
+            <img id="weatherIcon"
+            src=""
+            alt="weather">
+
+
+
+
+
+            <h1 id="temperature">
+
+                --°C
+
+            </h1>
+
+
+
+
+            <h3 id="condition">
+
+                Weather Condition
+
+            </h3>
+
+
+
+            <p id="description">
+
+                Description
+
+            </p>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Weather Details -->
+
+
+        <section class="details">
+
+
+            <div class="detail-box">
+
+
+                <i class="fa-solid fa-temperature-half"></i>
+
+
+                <h4>
+
+                    Feels Like
+
+                </h4>
+
+
+                <p id="feels">
+
+                    --
+
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="detail-box">
+
+
+                <i class="fa-solid fa-droplet"></i>
+
+
+                <h4>
+
+                    Humidity
+
+                </h4>
+
+
+                <p id="humidity">
+
+                    --
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="detail-box">
+
+
+                <i class="fa-solid fa-wind"></i>
+
+
+                <h4>
+
+                    Wind
+
+                </h4>
+
+
+                <p id="wind">
+
+                    --
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="detail-box">
+
+
+                <i class="fa-solid fa-eye"></i>
+
+
+                <h4>
+
+                    Visibility
+
+                </h4>
+
+
+                <p id="visibility">
+
+                    --
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Forecast -->
+
+
+        <section class="forecast-section">
+
+
+            <h2>
+
+                5 Day Forecast
+
+            </h2>
+
+
+
+            <div id="forecast">
+
+
+                <!-- Forecast Cards Added By JS -->
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- Search History -->
+
+<!-- Search History -->
+
+<section class="history">
+
+    <div class="history-header">
+
+        <h3>
+
+            Recent Searches
+
+        </h3>
+
+        <button id="clearHistory">
+
+            Clear
+
+        </button>
+
+    </div>
+
+    <div id="historyList">
+
+    </div>
+
+</section>
+
+        <!-- Loading -->
+
+
+        <div id="loading">
+
+
+            Loading Weather...
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>
