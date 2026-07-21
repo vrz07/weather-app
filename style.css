@@ -808,3 +808,15 @@ body.dark #errorMessage{
     }
 
 }
+
+.watermark {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 9999;
+}
